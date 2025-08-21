@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mar de Pinceles — Profesionales en pintura residencial y comercial</title>
+  <meta name="description" content="Empresa de pintura moderna y confiable. Pintura residencial y comercial, interiores y exteriores. Presupuesto gratis en 24h.">
+  <meta name="theme-color" content="#0284c7">
+  <style>
+    :root{
+      --bg: #f0f9ff;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #334155;
+      --brand: #0284c7;
+      --brand-2: #0d9488;
+      --ok: #16a34a;
+      --border: #dbeafe;
+      --shadow: 0 8px 20px rgba(2, 132, 199, .15);
+      --radius-xl: 1.25rem;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial; background: var(--bg); color: var(--text); line-height: 1.6}
+    a{color:var(--brand)}
+    img{max-width:100%; display:block}
+    .container{max-width:1100px; margin:0 auto; padding:0 1.25rem}
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(6px); background: rgba(255,255,255,.9); border-bottom:2px solid var(--brand)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+    .brand{display:flex; gap:.6rem; align-items:center; font-weight:700; color:var(--brand)}
+    .brand img.logo{height:50px; display:block}
+    .menu{display:flex; gap:1rem; align-items:center}
+    .menu a{color:var(--text); text-decoration:none; font-weight:500; opacity:.8}
+    .menu a:hover{opacity:1; color:var(--brand)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:600; text-decoration:none; border:1px solid var(--border); padding:.65rem 1rem; border-radius:999px; background:#fff; box-shadow: var(--shadow)}
+    .btn--primary{ border-color:transparent; background: linear-gradient(90deg, var(--brand), var(--brand-2)); color:#fff }
+    .hero{ padding: 4rem 0 3rem; background:
+      radial-gradient(800px 400px at 10% 0%, rgba(2,132,199,.15), transparent 60%),
+      radial-gradient(800px 400px at 90% 0%, rgba(13,148,136,.15), transparent 60%),
+      linear-gradient(180deg, #e0f2fe, #f0fdfa)}
+    .grid{display:grid; gap:2rem}
+    .hero .grid{grid-template-columns: 1.15fr .85fr}
+    .badge{display:inline-flex; align-items:center; gap:.5rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.35rem .65rem; font-size:.85rem; background:#fff}
+    h1{font-size: clamp(2.1rem, 3vw + 1.1rem, 3.2rem); line-height:1.15; margin:.4rem 0; color:var(--brand)}
+    .lead{color:var(--muted); font-size: 1.1rem; margin: 1rem 0 1.4rem}
+    .hero-card{background:#fff; padding:1rem; border:1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow)}
+    .hero-figure{ border-radius: var(--radius-xl); overflow:hidden; border:1px solid var(--border) }
+    section{padding: 3.2rem 0}
+    .section-title{font-size: clamp(1.6rem, 1.2vw + 1rem, 2rem); margin:0 0 .6rem; color:var(--brand)}
+    .section-sub{color:var(--muted); margin:0 0 1.4rem}
+    .cards{display:grid; gap:1rem; grid-template-columns: repeat(3, 1fr)}
+    .card{background:#fff; border:1px solid var(--border); border-radius: var(--radius-xl); padding:1rem; box-shadow: var(--shadow); transition:.3s}
+    .card:hover{transform:translateY(-3px); box-shadow:0 12px 25px rgba(13,148,136,.2)}
+    .masonry{columns: 3 280px; column-gap: 1rem}
+    .shot{break-inside: avoid; margin:0 0 1rem; border-radius: 1rem; overflow:hidden; border:2px solid var(--brand-2); background:#fff; box-shadow: var(--shadow)}
+    .testimonials{display:grid; gap:1rem; grid-template-columns: repeat(3, 1fr)}
+    .quote{background:#fff; border:1px solid var(--border); border-radius: var(--radius-xl); padding:1rem; box-shadow: var(--shadow)}
+    .stars{font-size:1rem; color:var(--brand-2)}
+    .cta{display:flex; flex-direction:column; align-items:center; text-align:center; gap:.75rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; border-radius: var(--radius-xl); padding:2rem; box-shadow: var(--shadow)}
+    .cta .section-title{color:#fff}
+    footer{background:var(--brand); padding:2.2rem 0; color:#f0fdfa}
+    .foot{display:grid; gap:1.5rem; grid-template-columns: 1.2fr .8fr .8fr}
+    .foot a{color:#f0fdfa; text-decoration:none}
+    .foot a:hover{color:#fff}
+    .copyright{border-top:1px solid rgba(255,255,255,.3); margin-top:1.2rem; padding-top:1rem; font-size:.9rem; color:#e0f2fe}
+
+    /* Estilos calculadora */
+    .calc{background:#fff; border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow); padding:1rem}
+    .calc-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:1rem}
+    .calc label{display:block; font-weight:600; margin-bottom:.25rem}
+    .calc input, .calc select{width:100%; padding:.65rem; border:1px solid var(--border); border-radius:.75rem}
+    .calc .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    .result{background:linear-gradient(180deg,#f0fdfa,#ecfeff); border:1px solid var(--border); padding:1rem; border-radius:var(--radius-xl)}
+    .muted{color:var(--muted); font-size:.9rem}
+
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns: 1fr}
+      .cards{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .foot{grid-template-columns:1fr}
+      .calc-grid{grid-template-columns:1fr}
+      .calc .row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="imagenes/logo-mardepinceles.jpg" alt="Logo Mar de Pinceles" class="logo" />
+        <span>Mar de Pinceles</span>
+      </div>
+      <nav class="menu" aria-label="principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto" class="btn">Contacto</a>
+        <a href="#contacto" class="btn btn--primary">Pide tu presupuesto</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <div class="badge" aria-label="confianza"><span>✨</span> <span>Más de <b>300+</b> proyectos entregados</span></div>
+          <h1>Pintura impecable, sin sorpresas.</h1>
+          <p class="lead">Especialistas en pintura <b>residencial y comercial</b>. Cumplimos plazos, cuidamos cada detalle y dejamos tu espacio como nuevo. <b>Garantía escrita</b> y presupuesto en 24h.</p>
+          <div style="display:flex; gap:.75rem; flex-wrap:wrap">
+            <a href="#contacto" class="btn btn--primary">Solicitar cotización</a>
+            <a href="#trabajos" class="btn">Ver trabajos</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <figure class="hero-figure">
+            <img src="https://images.unsplash.com/photo-1582582429416-45d6a4b66b9b?q=80&w=1200&auto=format&fit=crop" alt="Pintor profesional aplicando pintura en pared" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios de pintura</h2>
+        <p class="section-sub">Soluciones integrales con asesoría de color y acabados. Calidad garantizada.</p>
+        <div class="cards">
+          <article class="card"><h3>Interiores residenciales</h3><p>Renovación de paredes, techos, puertas y zócalos. Protección de mobiliario y limpieza al terminar.</p></article>
+          <article class="card"><h3>Exteriores y fachadas</h3><p>Tratamientos anti-humedad, selladores y pinturas acrílicas para máxima durabilidad.</p></article>
+          <article class="card"><h3>Pintura comercial</h3><p>Locales, oficinas y naves con planificación por fases para no detener tu operación.</p></article>
+          <article class="card"><h3>Alisado y reparación</h3><p>Masillado, lijado, reparación de grietas y gotelé. Superficies listas para pintar.</p></article>
+          <article class="card"><h3>Papel pintado & decoración</h3><p>Instalación de papel pintado, vinilos y acentos decorativos con precisión milimétrica.</p></article>
+          <article class="card"><h3>Asesoría de color</h3><p>Te ayudamos a combinar paletas modernas y atemporales según tu espacio y luz.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabajos">
+      <div class="container">
+        <h2 class="section-title">Trabajos recientes</h2>
+        <p class="section-sub">Ejemplos de arquitectura andaluza pintada y restaurada.</p>
+        <div class="masonry">
+          <figure class="shot"><img src="imagenes/andalucia-casa-blanca-01.png" alt="Casa blanca tradicional andaluza" /></figure>
+          <figure class="shot"><img src="imagenes/andalucia-patio-01.png" alt="Patio andaluz con arcos y columnas" /></figure>
+          <figure class="shot"><img src="imagenes/andalucia-casa-blanca-02.png" alt="Fachada blanca con detalles en amarillo en Andalucía" /></figure>
+          <figure class="shot"><img src="imagenes/andalucia-patio-02.png" alt="Patio interior andaluz con azulejos y vegetación" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULADORA DE COSTES -->
+    <section id="calculadora">
+      <div class="container">
+        <h2 class="section-title">Calcula tu presupuesto estimado</h2>
+        <p class="section-sub">Introduce el área y escoge el tipo de servicio. Las tarifas por m² son orientativas y <b>puedes ajustarlas</b> a tus precios.</p>
+
+        <div class="calc">
+          <div class="calc-grid">
+            <div>
+              <label for="tipo">Tipo de servicio</label>
+              <select id="tipo">
+                <option value="interior" data-tarifa="9">Interior residencial</option>
+                <option value="exterior" data-tarifa="12">Exterior / Fachada</option>
+                <option value="comercial" data-tarifa="14">Comercial / Oficina</option>
+              </select>
+            </div>
+            <div>
+              <label for="area">Área a pintar (m²)</label>
+              <input id="area" type="number" min="1" step="1" value="80" />
+            </div>
+
+            <div>
+              <label for="tarifa">Tarifa base (€/m²)</label>
+              <input id="tarifa" type="number" min="0" step="0.1" value="9" />
+            </div>
+            <div class="row">
+              <div>
+                <label for="manos">Manos de pintura</label>
+                <select id="manos">
+                  <option value="1">1 mano</option>
+                  <option value="2" selected>2 manos</option>
+                  <option value="3">3 manos</option>
+                </select>
+              </div>
+              <div>
+                <label for="iva">IVA</label>
+                <select id="iva">
+                  <option value="0">0%</option>
+                  <option value="10">10%</option>
+                  <option value="21" selected>21%</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="prep">Preparación de superficie</label>
+                <select id="prep">
+                  <option value="0">Sin preparación extra</option>
+                  <option value="2.5">Lijado/masillado ligero (+2,5 €/m²)</option>
+                  <option value="5">Alisado/imperfecciones (+5 €/m²)</option>
+                </select>
+              </div>
+              <div>
+                <label for="dificil">Altura/Acceso difícil</label>
+                <select id="dificil">
+                  <option value="0">Normal</option>
+                  <option value="0.1">+10%</option>
+                  <option value="0.2">+20%</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="result" style="margin-top:1rem">
+            <div class="row">
+              <div><strong>Subtotal mano de obra</strong><div class="muted">(tarifa x m² x factor manos)</div></div>
+              <div style="text-align:right"><span id="sub_mano">€0,00</span></div>
+            </div>
+            <div class="row">
+              <div><strong>Preparación superficie</strong></div>
+              <div style="text-align:right"><span id="sub_prep">€0,00</span></div>
+            </div>
+            <div class="row">
+              <div><strong>Recargo dificultad</strong></div>
+              <div style="text-align:right"><span id="sub_dificil">€0,00</span></div>
+            </div>
+            <hr style="border:none; border-top:1px solid var(--border); margin:1rem 0">
+            <div class="row">
+              <div><strong>Base imponible</strong></div>
+              <div style="text-align:right"><span id="base">€0,00</span></div>
+            </div>
+            <div class="row">
+              <div><strong>IVA</strong></div>
+              <div style="text-align:right"><span id="iva_val">€0,00</span></div>
+            </div>
+            <div class="row" style="font-size:1.3rem">
+              <div><strong>Total estimado</strong></div>
+              <div style="text-align:right"><strong id="total">€0,00</strong></div>
+            </div>
+            <p class="muted">* Estimación orientativa. El precio final puede variar tras visita técnica.</p>
+          </div>
+
+          <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem">
+            <button class="btn btn--primary" id="btn-calc" type="button">Calcular</button>
+            <a class="btn" href="#contacto">Solicitar presupuesto formal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="opiniones">
+      <div class="container">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials">
+          <blockquote class="quote"><div class="stars">★★★★★</div><p>“Cumplieron en tiempo y forma. La casa quedó perfecta y muy limpia.”</p><cite>— Laura M.</cite></blockquote>
+          <blockquote class="quote"><div class="stars">★★★★★</div><p>“Excelente asesoría de colores y acabados. Equipo profesional y amable.”</p><cite>— Carlos R.</cite></blockquote>
+          <blockquote class="quote"><div class="stars">★★★★★</div><p>“La fachada quedó como nueva. Materiales de primera y garantía.”</p><cite>— Silvia P.</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="cta">
+        <h2 class="section-title" style="margin:0">¿Listo para renovar tu espacio?</h2>
+        <p class="section-sub" style="margin:0; color:#e0f2fe">Cuéntanos tu idea y recibe un presupuesto sin compromiso en menos de 24 horas.</p>
+        <div style="display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center">
+          <a href="#contacto" class="btn btn--primary" style="background:#fff; color:var(--brand); border:none">Quiero mi presupuesto</a>
+          <a href="#servicios" class="btn" style="background:#fff; color:var(--brand-2)">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-sub">Rellena el formulario y te responderemos a la brevedad. También puedes escribir a <a href="mailto:contacto@mardepinceles.com">contacto@mardepinceles.com</a></p>
+        <form class="card" action="https://formspree.io/f/tu-id" method="POST" style="background:#fff; border:1px solid var(--border); border-radius:var(--radius-xl); padding:1rem; box-shadow:var(--shadow)">
+          <div class="grid" style="grid-template-columns:1fr 1fr">
+            <label>Nombre<br><input name="nombre" required placeholder="Tu nombre" style="width:100%"></label>
+            <label>Teléfono<br><input name="telefono" required placeholder="Ej. +34 600 000 000" style="width:100%"></label>
+          </div>
+          <label>Email<br><input type="email" name="email" required placeholder="tu@email.com" style="width:100%"></label>
+          <label>Mensaje<br><textarea name="mensaje" rows="4" required placeholder="Cuéntanos sobre tu proyecto" style="width:100%"></textarea></label>
+          <div style="display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; justify-content:space-between">
+            <small style="color:var(--muted)">Al enviar aceptas nuestra <a href="#">política de privacidad</a>.</small>
+            <button class="btn btn--primary" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="brand" style="margin-bottom:.5rem">
+          <img src="imagenes/logo-mardepinceles.jpg" alt="Logo Mar de Pinceles" class="logo" />
+          <span>Mar de Pinceles</span>
+        </div>
+        <p>Profesionales en pintura con enfoque en detalle, puntualidad y servicio.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a href="tel:+34600000000">+34 600 000 000</a><br>
+        <a href="mailto:contacto@mardepinceles.com">contacto@mardepinceles.com</a></p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <p><a href="#servicios">Servicios</a><br>
+        <a href="#trabajos">Trabajos</a><br>
+        <a href="#calculadora">Calculadora</a><br>
+        <a href="#contacto">Contacto</a></p>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="y"></span> Mar de Pinceles. Todos los derechos reservados.</div>
+  </footer>
+  <script>
+    const euros = n => n.toLocaleString('es-ES', {style:'currency', currency:'EUR'});
+
+    function factorManos(v){
+      const manos = Number(v);
+      if(manos===1) return 1.0;    // 1 mano
+      if(manos===2) return 1.7;    // rendimiento + tiempo adicional
+      return 2.3;                  // 3 manos
+    }
+
+    function calc(){
+      const tipoSel = document.getElementById('tipo');
+      const area = Math.max(0, Number(document.getElementById('area').value||0));
+      const tarifa = Math.max(0, Number(document.getElementById('tarifa').value||0));
+      const manos = factorManos(document.getElementById('manos').value);
+      const prep = Math.max(0, Number(document.getElementById('prep').value||0));
+      const dificil = Math.max(0, Number(document.getElementById('dificil').value||0));
+      const ivaPct = Math.max(0, Number(document.getElementById('iva').value||0));
+
+      const subMano = area * tarifa * manos;
+      const subPrep = area * prep;
+      const baseSinDificil = subMano + subPrep;
+      const recargoDificil = baseSinDificil * dificil;
+      const base = baseSinDificil + recargoDificil;
+      const ivaVal = base * (ivaPct/100);
+      const total = base + ivaVal;
+
+      document.getElementById('sub_mano').textContent = euros(subMano);
+      document.getElementById('sub_prep').textContent = euros(subPrep);
+      document.getElementById('sub_dificil').textContent = euros(recargoDificil);
+      document.getElementById('base').textContent = euros(base);
+      document.getElementById('iva_val').textContent = euros(ivaVal);
+      document.getElementById('total').textContent = euros(total);
+    }
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href')); if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth'});}}));
+
+    const tipoSel = document.getElementById('tipo');
+    const tarifaInput = document.getElementById('tarifa');
+    if(tipoSel && tarifaInput){
+      tipoSel.addEventListener('change', ()=>{ const t = tipoSel.selectedOptions[0].dataset.tarifa; if(t) tarifaInput.value = t; calc(); });
+      ['area','tarifa','manos','prep','dificil','iva'].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('input', calc); });
+      document.getElementById('btn-calc').addEventListener('click', calc);
+      calc();
+    }
+  </script>
+</body>
+</html>
