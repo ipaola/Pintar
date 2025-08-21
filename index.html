@@ -149,105 +149,51 @@
     </section>
 
     <!-- CALCULADORA DE COSTES -->
-    <section id="calculadora">
-      <div class="container">
-        <h2 class="section-title">Calcula tu presupuesto estimado</h2>
-        <p class="section-sub">Introduce el área y escoge el tipo de servicio. Las tarifas por m² son orientativas y <b>puedes ajustarlas</b> a tus precios.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Pintura</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+    h1 { text-align: center; }
+    .plan { display: block; margin: 10px 0; cursor: pointer; }
+    .plan-card { border: 1px solid #ccc; border-radius: 8px; padding: 10px; }
+    .plan-header { display: flex; justify-content: space-between; align-items: center; }
+    .badge { background: gold; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+    .row { margin: 5px 0; }
+    #summary { margin-top: 20px; border-top: 2px solid #333; padding-top: 10px; }
+    .sum-row { display: flex; justify-content: space-between; margin: 4px 0; }
+    .sum-row.total { font-weight: bold; font-size: 1.2em; }
+    .help { font-size: 0.85em; color: #666; margin-left: 4px; }
+    #btn-reset { margin-top: 15px; padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>🖌️ Calculadora de Pintura <span id="y"></span></h1>
 
-        <div class="calc">
-          <div class="calc-grid">
-            <div>
-              <label for="tipo">Tipo de servicio</label>
-              <select id="tipo">
-                <option value="interior" data-tarifa="9">Interior residencial</option>
-                <option value="exterior" data-tarifa="12">Exterior / Fachada</option>
-                <option value="comercial" data-tarifa="14">Comercial / Oficina</option>
-              </select>
-            </div>
-            <div>
-              <label for="area">Área a pintar (m²)</label>
-              <input id="area" type="number" min="1" step="1" value="80" />
-            </div>
+  <div>
+    <label for="area">Área a pintar (m²):</label>
+    <input id="area" type="number" value="90" min="0" style="width:100px">
+  </div>
 
-            <div>
-              <label for="tarifa">Tarifa base (€/m²)</label>
-              <input id="tarifa" type="number" min="0" step="0.1" value="9" />
-            </div>
-            <div class="row">
-              <div>
-                <label for="manos">Manos de pintura</label>
-                <select id="manos">
-                  <option value="1">1 mano</option>
-                  <option value="2" selected>2 manos</option>
-                  <option value="3">3 manos</option>
-                </select>
-              </div>
-              <div>
-                <label for="iva">IVA</label>
-                <select id="iva">
-                  <option value="0">0%</option>
-                  <option value="10">10%</option>
-                  <option value="21" selected>21%</option>
-                </select>
-              </div>
-            </div>
+  <h2>Planes disponibles</h2>
+  <div id="plans"></div>
 
-            <div class="row">
-              <div>
-                <label for="prep">Preparación de superficie</label>
-                <select id="prep">
-                  <option value="0">Sin preparación extra</option>
-                  <option value="2.5">Lijado/masillado ligero (+2,5 €/m²)</option>
-                  <option value="5">Alisado/imperfecciones (+5 €/m²)</option>
-                </select>
-              </div>
-              <div>
-                <label for="dificil">Altura/Acceso difícil</label>
-                <select id="dificil">
-                  <option value="0">Normal</option>
-                  <option value="0.1">+10%</option>
-                  <option value="0.2">+20%</option>
-                </select>
-              </div>
-            </div>
-          </div>
+  <h2>Extras</h2>
+  <div id="extras"></div>
 
-          <div class="result" style="margin-top:1rem">
-            <div class="row">
-              <div><strong>Subtotal mano de obra</strong><div class="muted">(tarifa x m² x factor manos)</div></div>
-              <div style="text-align:right"><span id="sub_mano">€0,00</span></div>
-            </div>
-            <div class="row">
-              <div><strong>Preparación superficie</strong></div>
-              <div style="text-align:right"><span id="sub_prep">€0,00</span></div>
-            </div>
-            <div class="row">
-              <div><strong>Recargo dificultad</strong></div>
-              <div style="text-align:right"><span id="sub_dificil">€0,00</span></div>
-            </div>
-            <hr style="border:none; border-top:1px solid var(--border); margin:1rem 0">
-            <div class="row">
-              <div><strong>Base imponible</strong></div>
-              <div style="text-align:right"><span id="base">€0,00</span></div>
-            </div>
-            <div class="row">
-              <div><strong>IVA</strong></div>
-              <div style="text-align:right"><span id="iva_val">€0,00</span></div>
-            </div>
-            <div class="row" style="font-size:1.3rem">
-              <div><strong>Total estimado</strong></div>
-              <div style="text-align:right"><strong id="total">€0,00</strong></div>
-            </div>
-            <p class="muted">* Estimación orientativa. El precio final puede variar tras visita técnica.</p>
-          </div>
+  <h2>Resumen</h2>
+  <div id="summary"></div>
 
-          <div style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem">
-            <button class="btn btn--primary" id="btn-calc" type="button">Calcular</button>
-            <a class="btn" href="#contacto">Solicitar presupuesto formal</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <button id="btn-reset">🔄 Reset</button>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>
+
 
     <section id="opiniones">
       <div class="container">
